@@ -1,0 +1,88 @@
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+import unittest
+import requests
+import time
+
+class BasePage:
+
+   
+
+    def assertElementsIsPresentByXpatch(self, xpath_elements):
+        try:
+            elements = self.find_elements_by_xpath(xpath_elements)
+            return [True, len(elements)]
+        except NoSuchElementException:
+            return [False, 0]
+
+    def assertElementIsPresentByXPath_Click(self, xpath, msg=None):
+        try:
+            element = self.find_element_by_xpath(xpath).click()
+            return True
+        except NoSuchElementException:
+            return(False)
+
+    def assertElementIsPresentByXPath_Send(self, xpath_input, send_message):
+        try:
+            element = self.find_element_by_xpath(xpath_input).send_keys(send_message)
+            return True
+        except NoSuchElementException:
+            return(False)
+
+    def element_exists_and_click(self, xpath):
+        assert BasePage.assertElementIsPresentByXPath_Click(self, xpath), f'Элемента {xpath} на странице нет'
+
+    def element_exists_and_send(self, xpath_input, send_message):
+        assert BasePage.assertElementIsPresentByXPath_Send(self, xpath_input, send_message), f'Элемента {xpath_input} на странице нет'
+
+    def element_exists_count(self, xpath_elements):
+        l = BasePage.assertElementsIsPresentByXpatch(self, xpath_elements)
+        # для вывода print использовать pytest -s
+        print(f'На СТРАНИЦЕ есть всего {l[1]} элемента(ов) {l[0]}')
+        assert l[0], f'Элементов {xpath_elements} на странице нет'
+        return l[1]
+
+    def scroll_down_link_click(self, xpath_down_link):
+      
+        SCROLL_PAUSE_TIME = 0.5
+        # Get scroll height
+        last_height = self.execute_script("return document.body.scrollHeight")
+        while True:
+            # Scroll down to bottom
+            self.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+            # Wait to load page
+            time.sleep(SCROLL_PAUSE_TIME)
+
+            # Calculate new scroll height and compare with last scroll height
+            new_height = self.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+        
+        assert BasePage.assertElementIsPresentByXPath_Click(self, xpath_down_link), f'Элемент {xpath_down_link} внизу страницы не обнаружен'
+     
+    def drop_down_element_click(self, xpath_drop_down_list, element_text):
+       
+        element = self.find_element_by_xpath(xpath_drop_down_list)
+        element.click()
+        all_options = element.find_elements_by_tag_name("option")
+        for option in all_options:
+            if option.get_attribute("text") == element_text:     #print("Value is: %s" % option.get_attribute("value"))
+                option.click()
+                break
+
+    def autorization_user(self, url, login, password):
+        session = requests.Session()
+        session.post(url, {
+            'username': login,
+            'password': password,
+            'remember': 1,
+        })
+
+    def uploading_file(self, xpath_input_file, file_path):
+        self.find_element(By.XPATH, xpath_input_file).send_keys(file_path)
+        
