@@ -3,15 +3,22 @@ from pathlib import Path
 import datetime
 
 class Data:
-   
+    # Путь к webdriver
     path_webdriver = Path('C:', 'Users', 'zhuravlev', 'source', 'repos')
-    url_autorization = 'http://vsrv-ins-kf:8559/'
 
+    # url версии VISITORCONTROL
+    url_autorization = 'http://vsrv-ins-kf:8556/'
+
+    # логин и пароль для VISITORCONTROL
     login_user = 'admin'
     password_user = '111111'
 
+    # ширина и высота окна браузера
     windows_width = 1920
     windows_high = 1080
+
+    # полный путь и имя файла логирования выполнения автотестов
+    log_file_name = 'C:\\Users\\zhuravlev\\source\\repos\\Test1\\VISITORCONTROL_autotesting_log.txt'
 
     ############################################################################################
     # Для страницы "Временный пропуск"
@@ -35,8 +42,8 @@ class Data:
 
     file_path = r'C:\Users\zhuravlev\Pictures\123.jpg'
 
-    FIO_host_party = 'Иванов Иван'
-    host_party_address = 'Домодедово, к. 2'
+    FIO_host_party = 'Dasdasd Dasdas Dasdsadsad'
+    host_party_address = 'Домодедово, к. 1'
 
     host_room = 'Палата №6'
     host_phone = '+79099073250'
@@ -61,9 +68,32 @@ class Data:
     parking_place = 'Парковка 2'
 
     ############################################################################################
-    # Для страницы " "
+    # Для страницы "Разовый пропуск"
+    url_autorization_RP = 'http://vsrv-ins-prpark:8556/'
 
+    login_user_RP = 'Секретарь2'
+    password_user_RP = '7777777'
 
+    last_name_RP = 'Секретарь2' 
+    first_name_RP = 'Секретарь2'
+    middle_name_RP = 'Секретарь2' + str(datetime.datetime.today())
+
+    beginning_validity_period_RP = datetime.datetime.today().strftime('%d.%m.%Y')
+    expiration_validity_period_RP = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%d.%m.%Y')
+
+    count_RP = '1'
+
+    FIO_host_party_RP = 'Орлова Виктория Андреевна'
+    host_party_address_RP = 'Флауэрмиллз'
+
+    ############################################################################################
+    # Для страницы "Пропуска / Оформление по заявке"
+
+    name_in_list_request = '1секретарь2 Секретарь2 1'
+
+    last_name_in_request = '1секретарь2'
+    first_name_in_request = 'Секретарь2'
+    middle_name_in_request = '1'
 
     '''
     url_home_avito = 'https://avito.ru'

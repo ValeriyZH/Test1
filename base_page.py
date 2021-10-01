@@ -3,9 +3,12 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+from loguru import logger
+import loguru
 import unittest
 import requests
 import time
+import sys
 
 class BasePage:
 
@@ -86,3 +89,8 @@ class BasePage:
     def uploading_file(self, xpath_input_file, file_path):
         self.find_element(By.XPATH, xpath_input_file).send_keys(file_path)
         
+    def logging_file(log_file):
+        logger.remove()
+        logger.add(log_file, level='INFO', format="<lvl>[</lvl><c>{time:DD.MM.YYYY HH:mm:ss.SSS}</c><lvl>]</lvl> <lvl>{message}</lvl>", catch='True')
+       
+
