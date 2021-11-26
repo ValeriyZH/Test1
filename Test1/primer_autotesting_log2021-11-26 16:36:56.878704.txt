@@ -1,0 +1,276 @@
+[26.11.2021 16:36:58.230] # ЗАПУСТИЛИ ТЕСТ-ПРИМЕР
+[26.11.2021 16:36:58.232] # установили нужный размер окна браузера
+[26.11.2021 16:36:58.364] # заходим на тестовую страницуhttps://yandex.ru/
+[26.11.2021 16:38:08.026] # проверяем наличие поля поиска
+[26.11.2021 16:38:08.047] An error has been caught in function 'pytest_pyfunc_call', process 'MainProcess' (52892), thread 'MainThread' (140571947812672):
+Traceback (most recent call last):
+
+  File "/home/gm/.local/bin/pytest", line 8, in <module>
+    sys.exit(console_main())
+    │   │    └ <function console_main at 0x7fd9743ebd30>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/config/__init__.py", line 185, in console_main
+    code = main()
+           └ <function main at 0x7fd9743ebca0>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/config/__init__.py", line 162, in main
+    ret: Union[ExitCode, int] = config.hook.pytest_cmdline_main(
+         │     │                │      │    └ <_HookCaller 'pytest_cmdline_main'>
+         │     │                │      └ <pluggy._hooks._HookRelay object at 0x7fd974884ac0>
+         │     │                └ <_pytest.config.Config object at 0x7fd974171c70>
+         │     └ <enum 'ExitCode'>
+         └ typing.Union
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_hooks.py", line 265, in __call__
+    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+           │    │         │    │     │    │                │       └ True
+           │    │         │    │     │    │                └ {'config': <_pytest.config.Config object at 0x7fd974171c70>}
+           │    │         │    │     │    └ <function _HookCaller.get_hookimpls at 0x7fd9744f73a0>
+           │    │         │    │     └ <_HookCaller 'pytest_cmdline_main'>
+           │    │         │    └ 'pytest_cmdline_main'
+           │    │         └ <_HookCaller 'pytest_cmdline_main'>
+           │    └ <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>>
+           └ <_HookCaller 'pytest_cmdline_main'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_manager.py", line 80, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'config': <_pytest.config.Config object at 0x7fd974171c70>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/main.p...
+           │    │               └ 'pytest_cmdline_main'
+           │    └ <function _multicall at 0x7fd9744eb5e0>
+           └ <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_callers.py", line 39, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<_pytest.config.Config object at 0x7fd974171c70>]
+          │         └ <function pytest_cmdline_main at 0x7fd974337160>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py'>>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py", line 316, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           │            │       └ <function _main at 0x7fd9743371f0>
+           │            └ <_pytest.config.Config object at 0x7fd974171c70>
+           └ <function wrap_session at 0x7fd9743370d0>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py", line 269, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    │       │            │    │       └ <Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>
+    │       │            │    └ <_pytest.config.Config object at 0x7fd974171c70>
+    │       │            └ <function _main at 0x7fd9743371f0>
+    │       └ <ExitCode.OK: 0>
+    └ <Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py", line 323, in _main
+    config.hook.pytest_runtestloop(session=session)
+    │      │    │                          └ <Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>
+    │      │    └ <_HookCaller 'pytest_runtestloop'>
+    │      └ <pluggy._hooks._HookRelay object at 0x7fd974884ac0>
+    └ <_pytest.config.Config object at 0x7fd974171c70>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_hooks.py", line 265, in __call__
+    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+           │    │         │    │     │    │                │       └ True
+           │    │         │    │     │    │                └ {'session': <Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>}
+           │    │         │    │     │    └ <function _HookCaller.get_hookimpls at 0x7fd9744f73a0>
+           │    │         │    │     └ <_HookCaller 'pytest_runtestloop'>
+           │    │         │    └ 'pytest_runtestloop'
+           │    │         └ <_HookCaller 'pytest_runtestloop'>
+           │    └ <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>>
+           └ <_HookCaller 'pytest_runtestloop'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_manager.py", line 80, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'session': <Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/main.p...
+           │    │               └ 'pytest_runtestloop'
+           │    └ <function _multicall at 0x7fd9744eb5e0>
+           └ <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_callers.py", line 39, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Session Test1 exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>]
+          │         └ <function pytest_runtestloop at 0x7fd974337310>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py'>>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/main.py", line 348, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    │    │                                        │              └ None
+    │    │                                        └ <Function test_primer>
+    │    └ <member 'config' of 'Node' objects>
+    └ <Function test_primer>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_hooks.py", line 265, in __call__
+    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+           │    │         │    │     │    │                │       └ True
+           │    │         │    │     │    │                └ {'item': <Function test_primer>, 'nextitem': None}
+           │    │         │    │     │    └ <function _HookCaller.get_hookimpls at 0x7fd9744f73a0>
+           │    │         │    │     └ <_HookCaller 'pytest_runtest_protocol'>
+           │    │         │    └ 'pytest_runtest_protocol'
+           │    │         └ <_HookCaller 'pytest_runtest_protocol'>
+           │    └ <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>>
+           └ <_HookCaller 'pytest_runtest_protocol'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_manager.py", line 80, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'item': <Function test_primer>, 'nextitem': None}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/ru...
+           │    │               └ 'pytest_runtest_protocol'
+           │    └ <function _multicall at 0x7fd9744eb5e0>
+           └ <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_callers.py", line 39, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_primer>, None]
+          │         └ <function pytest_runtest_protocol at 0x7fd97432bb80>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/run...
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 109, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    │               │              └ None
+    │               └ <Function test_primer>
+    └ <function runtestprotocol at 0x7fd97432bc10>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 126, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    │       │      │               │             └ True
+    │       │      │               └ <Function test_primer>
+    │       │      └ <function call_and_report at 0x7fd974330040>
+    │       └ <method 'append' of 'list' objects>
+    └ [<TestReport 'test_1.py::test_primer' when='setup' outcome='passed'>]
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 215, in call_and_report
+    call = call_runtest_hook(item, when, **kwds)
+           │                 │     │       └ {}
+           │                 │     └ 'call'
+           │                 └ <Function test_primer>
+           └ <function call_runtest_hook at 0x7fd974330160>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 254, in call_runtest_hook
+    return CallInfo.from_call(
+           │        └ <classmethod object at 0x7fd97432d430>
+           └ <class '_pytest.runner.CallInfo'>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 311, in from_call
+    result: Optional[TResult] = func()
+            │        │          └ <function call_runtest_hook.<locals>.<lambda> at 0x7fd972d61430>
+            │        └ +TResult
+            └ typing.Optional
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 255, in <lambda>
+    lambda: ihook(item=item, **kwds), when=when, reraise=reraise
+            │          │       └ {}
+            │          └ <Function test_primer>
+            └ <_HookCaller 'pytest_runtest_call'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_hooks.py", line 265, in __call__
+    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+           │    │         │    │     │    │                │       └ False
+           │    │         │    │     │    │                └ {'item': <Function test_primer>}
+           │    │         │    │     │    └ <function _HookCaller.get_hookimpls at 0x7fd9744f73a0>
+           │    │         │    │     └ <_HookCaller 'pytest_runtest_call'>
+           │    │         │    └ 'pytest_runtest_call'
+           │    │         └ <_HookCaller 'pytest_runtest_call'>
+           │    └ <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>>
+           └ <_HookCaller 'pytest_runtest_call'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_manager.py", line 80, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ False
+           │    │               │          │        └ {'item': <Function test_primer>}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/ru...
+           │    │               └ 'pytest_runtest_call'
+           │    └ <function _multicall at 0x7fd9744eb5e0>
+           └ <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_callers.py", line 39, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_primer>]
+          │         └ <function pytest_runtest_call at 0x7fd97432bdc0>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/run...
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/runner.py", line 162, in pytest_runtest_call
+    item.runtest()
+    │    └ <function Function.runtest at 0x7fd9747a1790>
+    └ <Function test_primer>
+  File "/home/gm/.local/lib/python3.8/site-packages/_pytest/python.py", line 1641, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    │    │                                   └ <Function test_primer>
+    │    └ <property object at 0x7fd974390ef0>
+    └ <Function test_primer>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_hooks.py", line 265, in __call__
+    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+           │    │         │    │     │    │                │       └ True
+           │    │         │    │     │    │                └ {'pyfuncitem': <Function test_primer>}
+           │    │         │    │     │    └ <function _HookCaller.get_hookimpls at 0x7fd9744f73a0>
+           │    │         │    │     └ <_HookCaller 'pytest_pyfunc_call'>
+           │    │         │    └ 'pytest_pyfunc_call'
+           │    │         └ <_HookCaller 'pytest_pyfunc_call'>
+           │    └ <bound method PluginManager._hookexec of <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>>
+           └ <_HookCaller 'pytest_pyfunc_call'>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_manager.py", line 80, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'pyfuncitem': <Function test_primer>}
+           │    │               │          └ [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/py...
+           │    │               └ 'pytest_pyfunc_call'
+           │    └ <function _multicall at 0x7fd9744eb5e0>
+           └ <_pytest.config.PytestPluginManager object at 0x7fd9749091c0>
+  File "/home/gm/.local/lib/python3.8/site-packages/pluggy/_callers.py", line 39, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_primer>]
+          │         └ <function pytest_pyfunc_call at 0x7fd974788e50>
+          └ <HookImpl plugin_name='python', plugin=<module '_pytest.python' from '/home/gm/.local/lib/python3.8/site-packages/_pytest/pyt...
+> File "/home/gm/.local/lib/python3.8/site-packages/_pytest/python.py", line 183, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             │              └ {'browser': <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>}
+             └ <function test_primer at 0x7fd972d53dc0>
+
+  File "/home/gm/PycharmProjects/Test1/Test1/test_1.py", line 37, in test_primer
+    Base.element_exists_and_click(browser, S.xpath_yandex_search)
+    │    │                        │        │ └ '//input[@id="text"]'
+    │    │                        │        └ <class 'selectorss.Selectorss'>
+    │    │                        └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+    │    └ <function BasePage.element_exists_and_click at 0x7fd972d53670>
+    └ <class 'base_page.BasePage'>
+
+  File "/home/gm/PycharmProjects/Test1/base_page.py", line 39, in element_exists_and_click
+    assert BasePage.assertElementIsPresentByXPath_Click(self, xpath), f'Элемента {xpath} на странице нет'
+           │        │                                   │     └ '//input[@id="text"]'
+           │        │                                   └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+           │        └ <function BasePage.assertElementIsPresentByXPath_Click at 0x7fd972d53550>
+           └ <class 'base_page.BasePage'>
+
+  File "/home/gm/PycharmProjects/Test1/base_page.py", line 26, in assertElementIsPresentByXPath_Click
+    element = self.find_element_by_xpath(xpath).click()
+              │    │                     └ '//input[@id="text"]'
+              │    └ <function WebDriver.find_element_by_xpath at 0x7fd97375d310>
+              └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+
+  File "/home/gm/.local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 520, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+           │    │               │  │            └ '//input[@id="text"]'
+           │    │               │  └ 'xpath'
+           │    │               └ <class 'selenium.webdriver.common.by.By'>
+           │    └ <function WebDriver.find_element at 0x7fd973760b80>
+           └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+  File "/home/gm/.local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 1244, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+           │    │       │       └ 'findElement'
+           │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebDriver.execute at 0x7fd97375d040>
+           └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+  File "/home/gm/.local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 424, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"no such window","message":"no such window: target window already closed\\nfrom u...
+    │    │             └ <function ErrorHandler.check_response at 0x7fd973f959d0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7fd972d5a2b0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="dedf16c52c3c274b97de4ff108a78212")>
+  File "/home/gm/.local/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['#0 0x55e15e7b7ee3 <unknown>', '#1 0x55e15e285608 <unknown>', '#2 0x55e15e265fcc <unknown>', '#3 0x55e15e2dc86b <unknown>', ...
+          │               │        └ None
+          │               └ 'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=96.0.4664.45)'
+          └ <class 'selenium.common.exceptions.NoSuchWindowException'>
+
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=96.0.4664.45)
+Stacktrace:
+#0 0x55e15e7b7ee3 <unknown>
+#1 0x55e15e285608 <unknown>
+#2 0x55e15e265fcc <unknown>
+#3 0x55e15e2dc86b <unknown>
+#4 0x55e15e2eba75 <unknown>
+#5 0x55e15e2d9163 <unknown>
+#6 0x55e15e2aebfc <unknown>
+#7 0x55e15e2afc05 <unknown>
+#8 0x55e15e7e9baa <unknown>
+#9 0x55e15e7ff651 <unknown>
+#10 0x55e15e7eab05 <unknown>
+#11 0x55e15e800a68 <unknown>
+#12 0x55e15e7df05f <unknown>
+#13 0x55e15e81b818 <unknown>
+#14 0x55e15e81b998 <unknown>
+#15 0x55e15e836eed <unknown>
+#16 0x7f93b9b7d609 <unknown>
+

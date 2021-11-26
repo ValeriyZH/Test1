@@ -38,15 +38,13 @@ class BasePage:
     def element_exists_and_click(self, xpath):
         assert BasePage.assertElementIsPresentByXPath_Click(self, xpath), f'Элемента {xpath} на странице нет'
 
-    def element_exists_and_send(self, xpath_input, send_message):
+    def element_exists_and_send(self, xpath_input, send_message) -> object:
         assert BasePage.assertElementIsPresentByXPath_Send(self, xpath_input, send_message), f'Элемента {xpath_input} на странице нет'
 
     def element_exists_count(self, xpath_elements):
-        l = BasePage.assertElementsIsPresentByXpatch(self, xpath_elements)
-        # для вывода print использовать pytest -s
-        print(f'На СТРАНИЦЕ есть всего {l[1]} элемента(ов) {l[0]}')
-        assert l[0], f'Элементов {xpath_elements} на странице нет'
-        return l[1]
+        elements_array = BasePage.assertElementsIsPresentByXpatch(self, xpath_elements)
+        assert elements_array[0], f'Элементов {xpath_elements} на странице нет'
+        return elements_array
 
     def scroll_down_link_click(self, xpath_down_link):
       
@@ -77,6 +75,8 @@ class BasePage:
             if option.get_attribute("text") == element_text:     #print("Value is: %s" % option.get_attribute("value"))
                 option.click()
                 break
+    def element_exists_and_click_enter(self, xpath_element):
+        self.find_element_by_xpath(xpath_element).send_keys(Keys.RETURN)
 
     def autorization_user(self, url, login, password):
         session = requests.Session()
@@ -92,5 +92,8 @@ class BasePage:
     def logging_file(log_file):
         logger.remove()
         logger.add(log_file, level='INFO', format="<lvl>[</lvl><c>{time:DD.MM.YYYY HH:mm:ss.SSS}</c><lvl>]</lvl> <lvl>{message}</lvl>", catch='True')
-       
 
+    def element_exists_array(self, xpath_elements):
+        elements_array = self.find_elements(By.XPATH, xpath_elements)
+        assert elements_array[0], f'Элементов {xpath_elements} на странице нет'
+        return elements_array

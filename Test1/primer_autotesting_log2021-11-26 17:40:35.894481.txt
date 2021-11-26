@@ -1,0 +1,15 @@
+[26.11.2021 17:40:37.014] # ЗАПУСТИЛИ ТЕСТ-ПРИМЕР
+[26.11.2021 17:40:37.015] # установили нужный размер окна браузера
+[26.11.2021 17:40:37.151] # заходим на тестовую страницуhttps://yandex.ru/
+[26.11.2021 17:40:41.504] # проверяем наличие поля поиска
+[26.11.2021 17:40:41.785] # вводим в строку поиска слово "Тензор"
+[26.11.2021 17:40:42.090] # проверяем наличие таблицы подсказок suggest
+[26.11.2021 17:40:42.213] # нажимаем клавишу "Enter"
+[26.11.2021 17:40:42.321] # получаем список первых пяти ссылок:
+[26.11.2021 17:40:44.013] #   https://yabs.yandex.ru/count/WqiejI_zO4q33He0X2qMGNKzSeJoCmK0JGGGW8200J7gyQ1X000003W40d3GbFIGY1200G680UFAgAyra06udUp3BvW1fFVVm2wu0VIGxV0Pm05Ss06KaOOLw06M0Q02Ye4Cm0BqgktMkEoily_imiML1fW3aPmP_OK4-0I8aZc81OYIEP05cuj7e0Mqjn6e1S733h05mSCEk0MkYHB01RIhDSW5vCSDvk2_DUMD3awmFLCUgGUcqCZNtC6XOR07W82OFBW7j0RG1mRn1yEho1oK1hnaW0W4q0Y4We60n820Xf01u0Z5W0Q02W6O2lGEoGhTZjHhxrBrF_WAWBKOgWiGX4MBXARG002rqrWJij450DaBw0k8aZdm2mQ83EYathu1gGo0ie6rUJ-gl-WCemBW3OE0W4293dDwDceyS9WEvPkwy8IspwaUe0x0X3tO3WMX3zaFW12kkjCHe282c16svnjg4xS7BB1CFx4IaDOoPWFTu3_m4W84g1F3oU3Izx7wek0JheaIe1IkYHAe59kBH_6Fyum6w1IC0iWLhFA5bmJG5V6Fyum6s1N1YlRieu-y_6Fmc1O1e1O1oHRG5kYathu1WHUO5wwp5QWN2S0Nj1BO5y24FUWN0PaOe1W1i1Yeo8ED1hWO0j0O3_WOnBNC_8oik8ydW1cmzBZYqBsHkI2G6G6W6Qe3i1cu6Vy1qXaIUM5YSrzpPN9sPN8lSZKvCIqpw1c0mWFm6O320_WPgVkB7e4Q__yBUnG3Xek86i24FQ0Quz-3y-EcrPwQ0R0QvEU9YxZqhU1kzHe10000WXjDCJOpDpapDpOqCZCvDZWvDIqnC3SmDZ4nDZGtCp0pCZSrE3anDorsR64nBJCuD3GjTcnXBMmtBM9XR65kOsLoBJWmE30jGa5CBJWoCZ3W6vkBHu8SY1m1wHo07V__VvaTu1t9d9a7e1u1g1u1q1xszBYhcE-QxqNO7lhQ7eWV____0Hy0IZKS3j4FDB0I4Jgr64OIV-DjInT14K539EgHE9UDt5crhkRcCxV1Iixaa5Wwv_w4NIqYfriaS4cvYey9NXHXivhIN2XZGXfQtkHM79rpgwixGtc09Y3qkTDm_PehiNUZn-4Q8V80~1?etext=2202.R9dqnRVWMF29luZo96-ysgme_FOhiqTittMGXCKpq9dsbHB1d3R4aXRjaGppbXlw.f69db1306d45cb479914e62d565e54fd01409c8f&from=yandex.ru%3Bsearch%26%23x2F%3B%3Bweb%3B%3B0%3B&q=%D1%82%D0%B5%D0%BD%D0%B7%D0%BE%D1%80
+[26.11.2021 17:40:44.037] #   https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B7%D0%BE%D1%80
+[26.11.2021 17:40:44.053] #   https://www.instagram.com/tensor_company/
+[26.11.2021 17:40:44.069] #   https://vk.com/tensor_company
+[26.11.2021 17:40:44.096] #   https://ru-ru.facebook.com/tensorcompany/
+[26.11.2021 17:40:44.096] # проверяем, есть ли в них tensor.ru
+[26.11.2021 17:40:44.173] # всего  tensor.ru есть в 0 из 5

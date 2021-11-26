@@ -1,5 +1,5 @@
 """
-This module contains shared fixtures for web UI tests.
+# This module contains shared fixtures for web UI tests.
 """
 
 import json
@@ -7,11 +7,13 @@ import pytest
 import datetime
 from selenium.webdriver import Chrome, Firefox
 import selenium
+
+
 from .data import Data as D
 import pathlib 
 
 
-CONFIG_PATH = 'C:\\Users\\zhuravlev\\source\\repos\\Test1\\config.json'
+CONFIG_PATH = D.Rep1 + 'config.json'
 DEFAULT_WAIT_TIME = 10
 SUPPORTED_BROWSERS = ['chrome', 'firefox']
 

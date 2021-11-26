@@ -3,6 +3,13 @@ from pathlib import Path
 import datetime
 
 class Data:
+    #  Для тестового задания от компании "Tenzor"
+    url_yandex = 'https://yandex.ru/'
+    search_string = 'Тензор'
+    # URL тестовых сайтов для отработки автотестирования
+    test_site1 = 'http://the-internet.herokuapp.com/'
+    # Репозитарии
+    Rep1 = "/home/gm/PycharmProjects/Test1/"
     # Путь к webdriver
     path_webdriver = Path('C:', 'Users', 'zhuravlev', 'source', 'repos')
 
@@ -18,7 +25,7 @@ class Data:
     windows_high = 1080
 
     # полный путь и имя файла логирования выполнения автотестов
-    log_file_name = 'C:\\Users\\zhuravlev\\source\\repos\\Test1\\VISITORCONTROL_autotesting_log.txt'
+    log_file_name = 'primer_autotesting_log' + str(datetime.datetime.today()) + '.txt'
 
     ############################################################################################
     # Для страницы "Временный пропуск"
@@ -94,6 +101,12 @@ class Data:
     last_name_in_request = '1секретарь2'
     first_name_in_request = 'Секретарь2'
     middle_name_in_request = '1'
+
+    #############################################################################################
+    # Для компании "Тензор"
+    elements_count = 5
+    tenzor_string = 'тензор'
+    tenzor_site = 'tensor.ru'
 
     '''
     url_home_avito = 'https://avito.ru'

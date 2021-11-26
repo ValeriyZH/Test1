@@ -1,7 +1,7 @@
 import datetime
 
 class Selectorss:
-   
+
     xpath_input_login = '//input[@name="UserName"]'
     xpath_input_password = '//input[@name="Password"]'
     xpath_button_autorization = '//button[@id="logonBtn"]'
@@ -37,19 +37,19 @@ class Selectorss:
     xpath_FIO_number_in_list_host_party = '//ul/li/a[@tabindex="-1"]'
     # '/html/body/ul[12]/li[1]/a'
     # '/html/body/ul[13]/li[2]/a'
-   
+
 
     xpath_host_party_address = '//input[@id="Host_Place_Value"]'
-    xpath_number_in_list_host_party_address = '/html/body/ul[14]/li[1]/a/div' 
+    xpath_number_in_list_host_party_address = '/html/body/ul[14]/li[1]/a/div'
     # '/html/body/ul[15]/li[1]/a/div'
 
     xpath_host_room = '//input[@id="Host_Room"]'
     xpath_host_phone = '//input[@id="Host_Phone"]'
-    
+
     xpath_users_document = '//div/a[contains(text(),"Документ посетителя")]'
     xpath_document_type = '//select[@id="VisitorDocumentModel_SelectedVisitorDocument"]'
     xpath_document_series = '//input[@id="VisitorDocumentModel_VisitorDocument_Seria"]'
-    
+
     xpath_document_number = '/html/body/div[1]/div[3]/div[1]/div[2]/div/div/form/div/div[1]/div[1]/div[2]/fieldset/div/div/div[2]/div/div[2]/input'
     xpath_document_authority = '//input[@id="VisitorDocumentModel_VisitorDocument_Athority"]'
     xpath_document_code = '//input[@id="VisitorDocumentModel_VisitorDocument_Code"]'
@@ -110,12 +110,12 @@ class Selectorss:
     xpath_FIO_group_host_party_2 = '//ul/li/a[@tabindex="-1"]'
     xpath_FIO_group_host_party_list = '/html/body/ul[12]/li[1]/a'
     # '/html/body/ul[12]/li[1]/a'
-    # '/html/body/ul[12]/li[1]/a  
+    # '/html/body/ul[12]/li[1]/a
 
     xpath_group_address_host_party = '//input[@id="Host_Place_Value"]'
     xpath_group_address_host_party_list = '/html/body/ul[14]/li/a/div'
     # '/html/body/ul[14]/li[5]/a/div'
-    
+
     #'/html/body/ul[14]/li[8]/a/div'
     # '/html/body/ul[14]/li[8]/a/div'
     # '//ul/li/a[@tabindex="-1"]'
@@ -143,7 +143,7 @@ class Selectorss:
     xpath_passes = '//span[text()="Пропуска"]'
 
     xpath_raz_propusk_by_request = '//div/a[@title="Оформление пропуска по заявке"]'
-    
+
     xpath_last_name_in_reguest = '//*[@id="VisitorModel_Visitor_LastName"]'
     xpath_first_name_in_reguest = '//*[@id="VisitorModel_Visitor_Firstname"]'
     xpath_middle_name_in_reguest = '//*[@id="VisitorModel_Visitor_MiddleName"]'
@@ -154,7 +154,7 @@ class Selectorss:
 
     xpath_first_free_card = '//td[text()="001002B38EE3"]'
     xpath_select_first_free_card = '//button[text()="Выбрать"]'
-    
+
 
     xpath_save_RP = '//button[@id="btSend"]'
 
@@ -168,12 +168,18 @@ class Selectorss:
 
     xpath_pass_delivery_button = '//button[@data-direction="Exit"]'
     xpath_ok_button_mark_made = '//button[text()="OK"]'
+    # -----------------------------------------------------------
+    xpath_test_link1 = '//a[text()="A/B Testing"]'
+    #  Для тестового задания от компании "Tenzor"
+    xpath_yandex_search = '//input[@id="text"]'
+    xpath_yandex_suggest = '//ul[@class="mini-suggest__popup-content"]'
+    xpath_elements = '//span[@class="OrganicTitleContentSpan"]/b'
+    xpath_elements2 = '//div[@class="Path Organic-Path path organic__path"]/a'
 
 
-    
 
-    
-    
-    
- 
-   
+
+
+
+
+
